@@ -31,15 +31,18 @@ const CGSize kLandscapeContentSize = { 320, 170 };
     
 	if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation))
 	{
-		self.contentSizeForViewInPopover = kPortraitContentSize;
+		//self.contentSizeForViewInPopover = kPortraitContentSize;
+        self.preferredContentSize = kPortraitContentSize;
 	}
 	else
 	{
-		self.contentSizeForViewInPopover = kLandscapeContentSize;
+		//self.contentSizeForViewInPopover = kLandscapeContentSize;
+        self.preferredContentSize = kLandscapeContentSize;
 	}
     
 	CGRect scrollViewFrame = CGRectZero;
-	scrollViewFrame.size = self.contentSizeForViewInPopover;
+	//scrollViewFrame.size = self.contentSizeForViewInPopover;
+    scrollViewFrame.size = self.preferredContentSize;
 	self.scrollView = [[UIScrollView alloc] initWithFrame:scrollViewFrame];
 	[self.view addSubview:self.scrollView];
     
@@ -53,17 +56,20 @@ const CGSize kLandscapeContentSize = { 320, 170 };
     
 	if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation))
 	{
-		self.contentSizeForViewInPopover = kPortraitContentSize;
+		//self.contentSizeForViewInPopover = kPortraitContentSize;
+        self.preferredContentSize = kPortraitContentSize;
 	}
 	else
 	{
-		self.contentSizeForViewInPopover = kLandscapeContentSize;
+		//self.contentSizeForViewInPopover = kLandscapeContentSize;
+        self.preferredContentSize = kLandscapeContentSize;
 	}
 	
 	[UIView animateWithDuration:duration
 					 animations:^{
 						 CGRect scrollViewFrame = CGRectZero;
-						 scrollViewFrame.size = self.contentSizeForViewInPopover;
+						 //scrollViewFrame.size = self.contentSizeForViewInPopover;
+                         scrollViewFrame.size = self.preferredContentSize;
 						 self.scrollView.frame = scrollViewFrame;
                          
 						 [self setupColorButtonsForInterfaceOrientation:toInterfaceOrientation];
