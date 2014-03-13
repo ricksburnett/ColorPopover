@@ -14,6 +14,7 @@
 
 @protocol ColorViewControllerDelegate<NSObject>
 
+// Sends hex value of color selected.
 - (void)colorPopoverControllerDidSelectColor:(NSString *)hexColor;
 
 @end
