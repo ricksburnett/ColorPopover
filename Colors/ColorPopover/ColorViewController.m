@@ -138,12 +138,12 @@ const CGSize kLandscapeContentSize = { 320, 170 };
 
 
 -(void)setupColorButtonsForInterfaceOrientation:(UIInterfaceOrientation)orientation{
-	int iMax = 7;
-	int jMax = 5;
+	NSInteger iMax = 7;
+	NSInteger jMax = 5;
 	
 	if (UIInterfaceOrientationIsLandscape(orientation))
 	{
-		int tmp = iMax;
+		NSInteger tmp = iMax;
 		iMax = jMax;
 		jMax = tmp;
 	}
@@ -153,9 +153,9 @@ const CGSize kLandscapeContentSize = { 320, 170 };
 	if (nil == self.colorButtons)
 	{
 		NSMutableArray* newColorButtons = [NSMutableArray arrayWithCapacity:iMax * jMax];
-		int colorNumber = 0;
-		for (int i=0; i<=iMax; i++) {
-			for (int j=0; j<=jMax; j++) {
+		NSInteger colorNumber = 0;
+		for (NSInteger i=0; i<=iMax; i++) {
+			for (NSInteger j=0; j<=jMax; j++) {
 				
 				ColorButton *colorButton = [ColorButton buttonWithType:UIButtonTypeCustom];
 				colorButton.frame = CGRectMake(3+(j*40), 3+(i*40), 35, 35);
@@ -195,10 +195,10 @@ const CGSize kLandscapeContentSize = { 320, 170 };
 	{
 		for (UIButton* colorButton in self.colorButtons)
 		{
-			int colorNumber = colorButton.tag;
+			NSInteger colorNumber = colorButton.tag;
 			
-			int j = colorNumber % (jMax + 1);
-			int i = colorNumber / (jMax + 1);
+			NSInteger j = colorNumber % (jMax + 1);
+			NSInteger i = colorNumber / (jMax + 1);
 			
 			colorButton.frame = CGRectMake(3+(j*40), 3+(i*40), 35, 35);
 		}
